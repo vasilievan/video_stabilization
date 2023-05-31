@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stabilize video</title>
+    <link type="text/css" rel="stylesheet" href="styles.css"/>
+    <script src="hide_script.js"></script>
+</head>
+<body>
+<form enctype="multipart/form-data" action="/stabilize" method="post" id="the_form_en">
+    <div>
+        <label for="upload-video">Choose a file...</label>
+        <input type="file" id="upload-video" name="upload-video" accept="video/mp4" required/>
+    </div>
+    <fieldset id="neural_or_standard">
+        <legend>Neural network or standard approach for feature detection?</legend>
+	<div>*The neural one shows the best results for videos with a major</div>
+        <div>sky areas or sea, for example, so it's efficient for videos</div>
+        <div>with homogeneous textures preveil. Such as:</div>
+        <img src="blue_blue_sky.png" class="center"><img/>
+        <div>
+            <input type="radio" id="neural" name="feature" value="neural" onclick="show();" checked>
+            <label for="neural">neural network</label>
+        </div>
+        <div>
+            <input type="radio" id="standard" name="feature" value="standard" onclick="hide();">
+            <label for="standard">standard approach</label>
+        </div>
+    </fieldset>
+    <fieldset id="door_fieldset">
+        <legend>Select an option that describes video content the best:</legend>
+        <div>
+            <input type="radio" id="indoor" name="door" value="indoor" checked>
+            <label for="indoor">indoor</label>
+        </div>
+        <div>
+            <input type="radio" id="outdoor" name="door" value="outdoor">
+            <label for="outdoor">outdoor</label>
+        </div>
+    </fieldset>
+    <div>
+        <input type="submit" id="next" name="next" value="Next" onsubmit="form.submit();">
+    </div>
+</form>
+<form enctype="multipart/form-data" action="/stabilize" method="post" id="the_form_ru">
+    <div>
+        <label for="upload-video">Выберите файл...</label>
+        <input type="file" id="upload-video" name="upload-video" accept="video/mp4" required/>
+    </div>
+    <fieldset id="neural_or_standard">
+        <legend>Нейросетевой или стандартный подход для выбора ключевых точек?</legend>
+        <div>*Нейросетевой демонстрирует лучшие результаты для видео</div>
+        <div>с большим количеством неба на фоне или моря, то есть</div>
+        <div>для видео с преобладанием на них однородных текстур. Как на рисунке:</div>
+        <img src="blue_blue_sky.png" class="center"><img/>
+        <div>
+            <input type="radio" id="neural" name="feature" value="neural" onclick="show();" checked>
+            <label for="neural">нейросетевой</label>
+        </div>
+        <div>
+            <input type="radio" id="standard" name="feature" value="standard" onclick="hide();">
+            <label for="standard">стандартный подход</label>
+        </div>
+    </fieldset>
+    <fieldset id="door_fieldset">
+        <legend>Выберите наиболее подходящее описание содержимого видео:</legend>
+        <div>
+            <input type="radio" id="indoor" name="door" value="indoor" checked>
+            <label for="indoor">снято внутри помещения</label>
+        </div>
+        <div>
+            <input type="radio" id="outdoor" name="door" value="outdoor">
+            <label for="outdoor">снято снаружи, на улице</label>
+        </div>
+    </fieldset>
+    <div>
+        <input type="submit" id="next" name="next" value="Далее" onsubmit="form.submit();">
+    </div>
+</form>
+<script src="index_script.js"></script>
+</body>
+</html>
